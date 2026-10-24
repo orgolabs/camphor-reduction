@@ -37,6 +37,7 @@
 
   <nav class="tocbar" aria-label="Section navigation">
     <div class="wrap">
+      <a href="#about">About</a>
       <a href="#viewers">3D structures</a>
       <a href="#mechanism">Mechanism</a>
       <a href="#procedure">Procedure</a>
@@ -46,6 +47,25 @@
   </nav>
 
   <main id="main" class="wrap">
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="card">
+      <h2>What is camphor — and what are we making?</h2>
+      <p>
+        Camphor is a <strong>terpene</strong> originally obtained from the wood of the camphor laurel
+        (<em>Camphora officinarum</em>, native to east and south Asia). You have probably met it as the
+        cooling smell in <strong>Vicks VapoRub</strong>; over the centuries it has also been used as an
+        insect repellent, a food and perfume additive, and a decongestant in traditional medicine.
+      </p>
+      <p>
+        Reducing camphor's carbonyl (C=O) group gives two <strong>diastereomeric</strong> alcohols —
+        <strong>isoborneol</strong> (exo-OH) and <strong>borneol</strong> (endo-OH). They share the same
+        connectivity but differ only in how the –OH points on the rigid cage. This experiment uses
+        <strong>sodium borohydride (NaBH₄)</strong>. The more powerful hydride <strong>lithium aluminium
+        hydride (LiAlH₄)</strong> also reduces camphor, but it must be kept away from water and protic
+        solvents, which makes it trickier and more hazardous — so NaBH₄ is the safer teaching choice.
+      </p>
+    </section>
 
     <!-- ============ 3D VIEWERS ============ -->
     <section id="viewers" class="card">
@@ -130,6 +150,17 @@
         </article>
       </div>
 
+      <div class="callout info">
+        <h3>How the hydride is delivered (and why water is added at the end)</h3>
+        <p>
+          Borohydride (BH₄⁻) is a <strong>hydride shuttle</strong>: one NaBH₄ can reduce up to
+          <strong>four</strong> camphor molecules, handing over one H⁻ at a time. Each transfer builds up a
+          <strong>borate ester</strong> (the new alkoxide bound to boron). The free alcohol is only released
+          during the <strong>aqueous work-up</strong> — which is exactly why the procedure adds ice-cold water
+          at the end: it hydrolyzes the borate ester and destroys any leftover NaBH₄.
+        </p>
+      </div>
+
       <div class="callout">
         <h3>A note on nuance (for the curious)</h3>
         <p>
@@ -151,7 +182,8 @@
           <tr><th scope="row">Molar mass (g/mol)</th><td>152.23</td><td>154.25</td><td>154.25</td></tr>
           <tr><th scope="row">–OH orientation</th><td>— (ketone)</td><td>exo</td><td>endo</td></tr>
           <tr><th scope="row">Role in NaBH₄ reduction</th><td>reactant</td><td>major (~90%)</td><td>minor (~10%)</td></tr>
-          <tr><th scope="row">PubChem CID</th><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/2537">2537</a></td><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/6321405">6321405</a></td><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/64685">64685</a></td></tr>
+          <tr><th scope="row">Configuration</th><td>(1R,4R)</td><td>(1R,2R,4R)</td><td>(1R,2S,4R)</td></tr>
+          <tr><th scope="row">PubChem CID</th><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/159055">159055</a></td><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/6321405">6321405</a></td><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/6552009">6552009</a></td></tr>
         </tbody>
       </table>
       <p class="fineprint">
@@ -164,21 +196,59 @@
     <section id="procedure" class="card">
       <h2>3 · Step-by-step laboratory procedure</h2>
       <p class="section-intro">
-        A representative micro/mini-scale protocol (per ~1&nbsp;g of camphor). Always follow your own lab's
-        safety sheet and your instructor's version — this is an educational summary, not a substitute for a
-        supervised SOP.
+        This is the micro-scale "Week&nbsp;3" procedure from the course lab manual, reproduced here so you can
+        follow it alongside the 3D structures and the calculator. Always follow your instructor's version and
+        your lab's safety rules — this page is a study aid, not a substitute for a supervised SOP.
       </p>
+      <a class="dl-btn" href="docs/reduction-of-camphor-lab-manual.pdf" target="_blank" rel="noopener">⬇ Download the full lab manual (PDF)</a>
+
+      <h3 class="proc-head">Reagents &amp; materials (micro scale, per 0.100&nbsp;g camphor)</h3>
+      <table class="reagents">
+        <thead><tr><th scope="col">Reagent</th><th scope="col">Amount</th><th scope="col">Role</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Camphor</th><td>0.100&nbsp;g (0.66&nbsp;mmol)</td><td>substrate (the ketone)</td></tr>
+          <tr><th scope="row">Methanol</th><td>0.5&nbsp;mL</td><td>protic solvent</td></tr>
+          <tr><th scope="row">Sodium borohydride, NaBH₄</th><td>~0.10&nbsp;g (2.6&nbsp;mmol, ≈4 molar equiv)</td><td>hydride source (large excess)</td></tr>
+          <tr><th scope="row">Ice-cold water</th><td>3.5&nbsp;mL</td><td>quench &amp; hydrolyze borate ester</td></tr>
+          <tr><th scope="row">Diethyl ether</th><td>4.5&nbsp;mL</td><td>extraction solvent</td></tr>
+          <tr><th scope="row">Anhydrous MgSO₄</th><td>spatula tip</td><td>drying agent</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="proc-head">Procedure</h3>
       <ol class="procedure">
-        <li><b>Dissolve.</b> Place camphor (~1.0&nbsp;g, 6.6&nbsp;mmol) in a flask and dissolve in ~5&nbsp;mL methanol. Cool in an ice bath.</li>
-        <li><b>Add reductant portionwise.</b> Add sodium borohydride (~0.25&nbsp;g, ≈1 molar equiv = 4 hydride equiv, a deliberate excess) in small portions, swirling. Gas evolution (H₂) is normal — keep flames away and work in a fume hood.</li>
-        <li><b>Stir.</b> Remove the ice bath and stir at room temperature (~15–30&nbsp;min) until the ketone is consumed (TLC, or loss of camphor odor/solid).</li>
-        <li><b>Quench.</b> Carefully add water (and dilute acid if your protocol calls for it) to destroy excess NaBH₄ and hydrolyze the borate ester intermediate, releasing the free alcohol.</li>
-        <li><b>Isolate.</b> Collect the product — the borneol/isoborneol mixture is a low-melting solid. Filter or extract, wash, and dry per your protocol.</li>
-        <li><b>Characterize.</b> Confirm the product and its exo/endo makeup by melting point, IR (loss of C=O ~1740&nbsp;cm⁻¹, gain of broad O–H ~3300&nbsp;cm⁻¹), GC, or NMR.</li>
+        <li>Weigh out <b>0.100&nbsp;g camphor</b> and transfer it to a 10-mL Erlenmeyer flask.</li>
+        <li>In the fume hood, add <b>0.5&nbsp;mL methanol</b> to the camphor.</li>
+        <li>Stir with a glass rod until the camphor has completely dissolved.</li>
+        <li>Have an <b>ice bath</b> ready.</li>
+        <li>Weigh about <b>0.10&nbsp;g sodium borohydride</b> into a vial.</li>
+        <li>Cautiously and intermittently add the NaBH₄ to the solution in small portions. It will <b>evolve gas (H₂) and warm up</b>; when it rises above room temperature, return the flask to the ice bath.</li>
+        <li>Heat the flask on a <b>warm sand bath for ~10&nbsp;minutes</b>.</li>
+        <li>Allow the reaction to cool to room temperature.</li>
+        <li>Carefully add <b>3.5&nbsp;mL ice-cold water</b>.</li>
+        <li>Collect the white solid by vacuum filtration on a <b>Hirsch funnel</b>.</li>
+        <li>Transfer the solid to a vial.</li>
+        <li>Add <b>4.5&nbsp;mL diethyl ether</b> to dissolve the product, then add <b>anhydrous magnesium sulfate</b> to dry the solution.</li>
+        <li>Remove the drying agent by transferring the solution into another <b>pre-weighed</b> vial.</li>
+        <li>Evaporate the ether to leave the product.</li>
       </ol>
+
+      <h3 class="proc-head">Analysis of the alcohol product</h3>
+      <ol class="procedure">
+        <li>Weigh the product and calculate the <b>percentage yield</b> (use the calculator below).</li>
+        <li>Determine the <b>melting point</b>.</li>
+        <li>Record the <b>infrared spectrum</b> — look for loss of the C=O band (~1740&nbsp;cm⁻¹) and a new broad O–H band (~3300&nbsp;cm⁻¹) confirming the ketone became an alcohol.</li>
+      </ol>
+
       <div class="safety">
-        <b>Safety:</b> NaBH₄ releases flammable H₂ and is corrosive; methanol is flammable and toxic.
-        Goggles, gloves, fume hood, no ignition sources. Dispose per institutional guidelines.
+        <b>Special instructions &amp; safety:</b> All reactants and products are highly volatile — keep them in
+        tightly sealed containers and work in a well-ventilated area or fume hood. <b>Diethyl ether is extremely
+        flammable</b> — no flames or ignition sources nearby. NaBH₄ releases flammable H₂ and is corrosive;
+        methanol is flammable and toxic. Wear goggles and gloves.
+      </div>
+      <div class="safety" style="margin-top:12px">
+        <b>Waste disposal:</b> Aqueous solutions from the work-up go in the designated <b>aqueous waste</b>
+        container. Residual methanol or ether goes in the <b>non-halogenated organic waste</b> container.
       </div>
     </section>
 
@@ -186,20 +256,21 @@
     <section id="calculator" class="card">
       <h2>4 · Live scale &amp; yield calculator</h2>
       <p class="section-intro">
-        Change any input and every quantity updates instantly. Molar masses: camphor 152.23, product 154.25,
-        NaBH₄ 37.83&nbsp;g/mol; methanol estimated at 5&nbsp;mL per gram of camphor.
+        Pre-filled with the lab manual's micro-scale amounts — change any input and every quantity updates
+        instantly. Molar masses: camphor 152.23, product 154.25, NaBH₄ 37.83&nbsp;g/mol; methanol estimated at
+        5&nbsp;mL per gram of camphor. The manual uses ~4 molar equivalents of NaBH₄ (a deliberate large excess).
       </p>
       <div class="calc">
         <div class="calc-inputs">
           <label>Camphor starting mass (g)
-            <input type="number" id="in-camphor" value="1.00" min="0" step="0.01" />
+            <input type="number" id="in-camphor" value="0.100" min="0" step="0.01" />
           </label>
           <label>NaBH₄ (molar equivalents)
-            <input type="number" id="in-equiv" value="1.0" min="0" step="0.1" />
-            <small>1 equiv NaBH₄ = 4 hydride equiv</small>
+            <input type="number" id="in-equiv" value="4.0" min="0" step="0.1" />
+            <small>1 equiv NaBH₄ delivers 4 hydrides; manual ≈ 4 equiv</small>
           </label>
           <label>Isolated product mass (g) <span class="opt">optional</span>
-            <input type="number" id="in-isolated" value="0.82" min="0" step="0.01" />
+            <input type="number" id="in-isolated" value="0.080" min="0" step="0.01" />
           </label>
         </div>
         <div class="calc-outputs" id="calc-out">
@@ -223,8 +294,9 @@
       </p>
       <ol class="refs" id="ref-list"></ol>
       <p class="fineprint">
-        Molecular data and 3D coordinates: <a href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a>
-        (public domain, U.S. National Library of Medicine) via the PUG-REST API, retrieved 2026-10-24.
+        Molecular data and 3D coordinates: <a href="https://pubchem.ncbi.nlm.nih.gov/compound/159055">PubChem</a>
+        (public domain, U.S. National Library of Medicine) via the PUG-REST API, retrieved 2026-10-24
+        — camphor CID 159055, isoborneol CID 6321405, borneol CID 6552009, all in the natural (1R,4R) series.
         3D rendering by <a href="https://3dmol.csb.pitt.edu/">3Dmol.js</a> (BSD-3-Clause).
       </p>
     </section>

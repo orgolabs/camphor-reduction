@@ -5,9 +5,13 @@ diastereomeric alcohols, **isoborneol** (major) and **borneol** (minor). It expl
 selective — a textbook case of **steric approach control** — with:
 
 - **Real 3D structures** you can rotate and zoom (ball-and-stick / stick / space-fill), loaded from actual
-  PubChem geometries via [3Dmol.js](https://3dmol.csb.pitt.edu/).
-- A **step-by-step mechanism** (exo vs. endo hydride attack) and a step-by-step **laboratory procedure**.
-- A **live stoichiometry & yield calculator** that scales reagents and computes theoretical and percent yield.
+  PubChem geometries via [3Dmol.js](https://3dmol.csb.pitt.edu/). All three molecules use the natural
+  **(1R,4R)** series with *defined* stereochemistry, so isoborneol (exo-OH) and borneol (endo-OH) differ
+  **only at C2** — exactly as the lab manual draws them.
+- A **step-by-step mechanism** (exo vs. endo hydride attack, plus the borate-ester delivery and why water is
+  added at the end) and the **real Week-3 micro-scale procedure** from the course lab manual
+  (`docs/reduction-of-camphor-lab-manual.pdf`, also downloadable from the page).
+- A **live stoichiometry & yield calculator** pre-filled with the manual's micro-scale amounts.
 - **Verified references** with access labels (open vs. subscription) and resolvable DOIs.
 
 It is a single static site — no build step, no framework — so it runs by opening `index.html` or from GitHub Pages.
@@ -34,9 +38,11 @@ vary with solvent/conditions). The minor **endo-OH** product is **borneol**.
 │   ├── calculator.js    # live scale & yield math
 │   └── references.js    # reference list (rendered into the page)
 ├── data/
-│   ├── camphor.sdf      # source 3D structures from PubChem (PUG-REST)
+│   ├── camphor.sdf      # source 3D structures from PubChem (PUG-REST), (1R,4R) series
 │   ├── isoborneol.sdf
 │   └── borneol.sdf
+├── docs/
+│   └── reduction-of-camphor-lab-manual.pdf   # the course lab manual (downloadable from the page)
 ├── .nojekyll            # tell GitHub Pages to serve files as-is
 ├── LICENSE              # MIT
 └── README.md
@@ -62,7 +68,9 @@ Full citations with DOIs are listed on the page and in `js/references.js`. The k
    doi:10.1016/0040-4020(79)80140-4
 3. Markgraf, J. H. *J. Chem. Educ.* **1967**, 44, 36. — exo/endo correlations in the camphor series.
    doi:10.1021/ed044p36
-4. PubChem (NLM) — compound records & 3D conformers: camphor CID 2537, isoborneol CID 6321405, borneol CID 64685.
+4. PubChem (NLM) — compound records & 3D conformers: camphor CID 159055, isoborneol CID 6321405, borneol CID 6552009.
+5. Course organic chemistry laboratory manual — *Reduction of Camphor with Sodium Borohydride* (Week 3, micro
+   scale): the procedure, amounts and background reproduced on the page. See `docs/`.
 
 ## Credits & licensing
 

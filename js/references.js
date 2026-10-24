@@ -29,12 +29,21 @@ window.REFERENCES = [
     access: "paywall"
   },
   {
-    title: "Camphor (CID 2537), Isoborneol (CID 6321405), Borneol (CID 64685)",
+    title: "Camphor (CID 159055), Isoborneol (CID 6321405), Borneol (CID 6552009)",
     authors: "PubChem, U.S. National Library of Medicine.",
-    meta: "Public-domain compound records: formulas, molar masses, computed 3D conformers (source of the viewers above).",
-    note: "Free and public. The 3D coordinates on this page come directly from these records via the PUG-REST API.",
-    url: "https://pubchem.ncbi.nlm.nih.gov/compound/2537",
-    linkText: "pubchem.ncbi.nlm.nih.gov/compound/2537",
+    meta: "Public-domain compound records in the natural (1R,4R) series: formulas, molar masses, computed 3D conformers (source of the viewers above).",
+    note: "Free and public. The 3D coordinates come directly from these defined-stereochemistry records so isoborneol (exo-OH) and borneol (endo-OH) differ only at C2.",
+    url: "https://pubchem.ncbi.nlm.nih.gov/compound/159055",
+    linkText: "pubchem.ncbi.nlm.nih.gov/compound/159055",
+    access: "open"
+  },
+  {
+    title: "Reduction of Camphor with Sodium Borohydride — Week 3 (micro scale)",
+    authors: "Course organic chemistry laboratory manual.",
+    meta: "Background, mechanism, procedure, analysis, safety and waste guidance.",
+    note: "The procedure, reagent amounts and background on this page follow this manual. Downloadable below.",
+    url: "docs/reduction-of-camphor-lab-manual.pdf",
+    linkText: "Download the lab manual (PDF)",
     access: "open"
   },
   {
