@@ -1,4 +1,11 @@
+<p align="center">
+  <a href="https://github.com/orgolabs"><img src="brand/orgolabs-wordmark.png" alt="orgolabs — organic chemistry labs" width="300"></a>
+</p>
+
 # Reduction of Camphor — an interactive, fact-checked explainer
+
+> Part of **[orgolabs](https://github.com/orgolabs)** — interactive, fact-checked organic chemistry labs.
+> **Live site:** https://orgolabs.github.io/camphor-reduction/
 
 An open educational resource on the **sodium borohydride (NaBH₄) reduction of camphor** to its two
 diastereomeric alcohols, **isoborneol** (major) and **borneol** (minor). It explains *why* the reaction is
