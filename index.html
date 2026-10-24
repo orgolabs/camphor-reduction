@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reduction of Camphor — Stereochemistry of NaBH₄ Reduction</title>
+  <meta name="description" content="An interactive, fact-checked walkthrough of the sodium borohydride reduction of camphor to isoborneol and borneol: real 3D structures, the stereochemical mechanism (steric approach control), a step-by-step procedure, and a live stoichiometry calculator." />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Interactive organic chemistry · diastereoselective reduction</p>
+      <h1>The Reduction of Camphor</h1>
+      <p class="lede">
+        Sodium borohydride turns the rigid bicyclic ketone <strong>camphor</strong> into a pair of
+        diastereomeric alcohols — <strong>isoborneol</strong> (major) and <strong>borneol</strong> (minor).
+        Which one wins, and <em>why</em>, is a classic lesson in <strong>steric approach control</strong>.
+        Rotate the real 3D molecules, follow the mechanism, and scale the experiment below.
+      </p>
+      <div class="reaction-strip" aria-label="Reaction summary">
+        <span class="mol">camphor<br><small>C₁₀H₁₆O</small></span>
+        <span class="arrow">
+          <span class="above">NaBH₄</span>
+          <span class="shaft">→</span>
+          <span class="below">MeOH, 0&nbsp;°C → rt</span>
+        </span>
+        <span class="mol major">isoborneol<br><small>C₁₀H₁₈O · ~90%</small></span>
+        <span class="plus">+</span>
+        <span class="mol minor">borneol<br><small>C₁₀H₁₈O · ~10%</small></span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tocbar" aria-label="Section navigation">
+    <div class="wrap">
+      <a href="#viewers">3D structures</a>
+      <a href="#mechanism">Mechanism</a>
+      <a href="#procedure">Procedure</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#references">References</a>
+    </div>
+  </nav>
+
+  <main id="main" class="wrap">
+
+    <!-- ============ 3D VIEWERS ============ -->
+    <section id="viewers" class="card">
+      <h2>1 · The three molecules in real 3D</h2>
+      <p class="section-intro">
+        These are <strong>real geometries</strong> from PubChem (not sketches): drag to rotate, scroll to zoom.
+        Watch the one-carbon bridge with its two methyl groups (the <em>7,7-gem-dimethyl</em> bridge) — it is the
+        reason the reaction is selective.
+      </p>
+
+      <div class="viewer-controls" role="group" aria-label="3D display controls">
+        <div class="ctrl-group">
+          <span class="ctrl-label">Style</span>
+          <button type="button" class="btn" data-style="stick">Stick</button>
+          <button type="button" class="btn is-active" data-style="ballstick">Ball &amp; stick</button>
+          <button type="button" class="btn" data-style="sphere">Space-fill</button>
+        </div>
+        <div class="ctrl-group">
+          <button type="button" class="btn toggle" id="spinBtn" aria-pressed="false">Spin</button>
+          <button type="button" class="btn toggle" id="hBtn" aria-pressed="true">Show H</button>
+          <button type="button" class="btn toggle" id="ohBtn" aria-pressed="false">Highlight O</button>
+        </div>
+      </div>
+
+      <div class="viewer-grid">
+        <figure class="viewer-card">
+          <figcaption><span class="tag tag-start">Starting material</span><b>Camphor</b></figcaption>
+          <div class="viewer" id="view-camphor" data-mol="camphor"></div>
+          <p class="viewer-note">C=O at C2. The exo face (top) is roofed by the gem-dimethyl bridge.</p>
+        </figure>
+        <figure class="viewer-card">
+          <figcaption><span class="tag tag-major">Major ~90%</span><b>Isoborneol</b></figcaption>
+          <div class="viewer" id="view-isoborneol" data-mol="isoborneol"></div>
+          <p class="viewer-note"><b>exo-OH.</b> Hydride added to the open endo face, so –OH points exo.</p>
+        </figure>
+        <figure class="viewer-card">
+          <figcaption><span class="tag tag-minor">Minor ~10%</span><b>Borneol</b></figcaption>
+          <div class="viewer" id="view-borneol" data-mol="borneol"></div>
+          <p class="viewer-note"><b>endo-OH.</b> Hydride forced past the bridge (exo), so –OH points endo.</p>
+        </figure>
+      </div>
+      <p id="viewer-fallback" class="viewer-fallback" hidden>
+        The 3D viewer library (3Dmol.js) could not load from the CDN. Check your network connection and reload.
+      </p>
+    </section>
+
+    <!-- ============ MECHANISM ============ -->
+    <section id="mechanism" class="card">
+      <h2>2 · Why isoborneol wins: steric approach control</h2>
+      <p class="section-intro">
+        NaBH₄ reduction is <strong>fast and essentially irreversible</strong>, so the product ratio is set by
+        <strong>which face the hydride can reach</strong> (kinetic control), not by the stability of the products.
+      </p>
+
+      <div class="mech-grid">
+        <article class="mech-step">
+          <span class="step-num">1</span>
+          <h3>A roof over the exo face</h3>
+          <p>
+            Camphor is <em>1,7,7-trimethylbicyclo[2.2.1]heptan-2-one</em>. The two methyl groups on the
+            one-carbon bridge (C7) sit directly over the <strong>exo</strong> face of the C2 carbonyl,
+            blocking approach from that side.
+          </p>
+        </article>
+        <article class="mech-step major-accent">
+          <span class="step-num">2</span>
+          <h3>Hydride attacks endo → major</h3>
+          <p>
+            The small hydride (H⁻ from BH₄⁻) takes the open <strong>endo</strong> face. Adding H to the endo
+            side pushes the new –OH to the <strong>exo</strong> position, giving <strong>isoborneol</strong>
+            as the major product.
+          </p>
+        </article>
+        <article class="mech-step minor-accent">
+          <span class="step-num">3</span>
+          <h3>Exo attack → minor</h3>
+          <p>
+            A smaller fraction of hydride pushes past the bridge from the <strong>exo</strong> face. That sends
+            the –OH <strong>endo</strong>, giving <strong>borneol</strong>. Hence the ~90 : 10 preference for
+            isoborneol.
+          </p>
+        </article>
+      </div>
+
+      <div class="callout">
+        <h3>A note on nuance (for the curious)</h3>
+        <p>
+          "Steric approach control" is the picture H.&nbsp;C.&nbsp;Brown introduced using exactly these rigid
+          bicyclic ketones, and it captures the result well. The full modern picture also includes
+          <strong>torsional (eclipsing) strain</strong> in the transition state and electronic effects; see
+          Wigfield's review for the detailed mechanistic debate. For camphor, the bulky bridge dominates and
+          the outcome is unambiguous.
+        </p>
+      </div>
+
+      <table class="facts">
+        <caption>Key facts (fact-checked against PubChem &amp; the primary literature)</caption>
+        <thead>
+          <tr><th scope="col">Property</th><th scope="col">Camphor</th><th scope="col">Isoborneol</th><th scope="col">Borneol</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Formula</th><td>C₁₀H₁₆O</td><td>C₁₀H₁₈O</td><td>C₁₀H₁₈O</td></tr>
+          <tr><th scope="row">Molar mass (g/mol)</th><td>152.23</td><td>154.25</td><td>154.25</td></tr>
+          <tr><th scope="row">–OH orientation</th><td>— (ketone)</td><td>exo</td><td>endo</td></tr>
+          <tr><th scope="row">Role in NaBH₄ reduction</th><td>reactant</td><td>major (~90%)</td><td>minor (~10%)</td></tr>
+          <tr><th scope="row">PubChem CID</th><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/2537">2537</a></td><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/6321405">6321405</a></td><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/64685">64685</a></td></tr>
+        </tbody>
+      </table>
+      <p class="fineprint">
+        The ~90 : 10 ratio is the commonly reported figure for NaBH₄ in methanol; exact values (≈85–92% isoborneol)
+        vary with solvent and conditions. Primary data: Brown &amp; Muzzio, <em>JACS</em> 1966 (ref. 1).
+      </p>
+    </section>
+
+    <!-- ============ PROCEDURE ============ -->
+    <section id="procedure" class="card">
+      <h2>3 · Step-by-step laboratory procedure</h2>
+      <p class="section-intro">
+        A representative micro/mini-scale protocol (per ~1&nbsp;g of camphor). Always follow your own lab's
+        safety sheet and your instructor's version — this is an educational summary, not a substitute for a
+        supervised SOP.
+      </p>
+      <ol class="procedure">
+        <li><b>Dissolve.</b> Place camphor (~1.0&nbsp;g, 6.6&nbsp;mmol) in a flask and dissolve in ~5&nbsp;mL methanol. Cool in an ice bath.</li>
+        <li><b>Add reductant portionwise.</b> Add sodium borohydride (~0.25&nbsp;g, ≈1 molar equiv = 4 hydride equiv, a deliberate excess) in small portions, swirling. Gas evolution (H₂) is normal — keep flames away and work in a fume hood.</li>
+        <li><b>Stir.</b> Remove the ice bath and stir at room temperature (~15–30&nbsp;min) until the ketone is consumed (TLC, or loss of camphor odor/solid).</li>
+        <li><b>Quench.</b> Carefully add water (and dilute acid if your protocol calls for it) to destroy excess NaBH₄ and hydrolyze the borate ester intermediate, releasing the free alcohol.</li>
+        <li><b>Isolate.</b> Collect the product — the borneol/isoborneol mixture is a low-melting solid. Filter or extract, wash, and dry per your protocol.</li>
+        <li><b>Characterize.</b> Confirm the product and its exo/endo makeup by melting point, IR (loss of C=O ~1740&nbsp;cm⁻¹, gain of broad O–H ~3300&nbsp;cm⁻¹), GC, or NMR.</li>
+      </ol>
+      <div class="safety">
+        <b>Safety:</b> NaBH₄ releases flammable H₂ and is corrosive; methanol is flammable and toxic.
+        Goggles, gloves, fume hood, no ignition sources. Dispose per institutional guidelines.
+      </div>
+    </section>
+
+    <!-- ============ CALCULATOR ============ -->
+    <section id="calculator" class="card">
+      <h2>4 · Live scale &amp; yield calculator</h2>
+      <p class="section-intro">
+        Change any input and every quantity updates instantly. Molar masses: camphor 152.23, product 154.25,
+        NaBH₄ 37.83&nbsp;g/mol; methanol estimated at 5&nbsp;mL per gram of camphor.
+      </p>
+      <div class="calc">
+        <div class="calc-inputs">
+          <label>Camphor starting mass (g)
+            <input type="number" id="in-camphor" value="1.00" min="0" step="0.01" />
+          </label>
+          <label>NaBH₄ (molar equivalents)
+            <input type="number" id="in-equiv" value="1.0" min="0" step="0.1" />
+            <small>1 equiv NaBH₄ = 4 hydride equiv</small>
+          </label>
+          <label>Isolated product mass (g) <span class="opt">optional</span>
+            <input type="number" id="in-isolated" value="0.82" min="0" step="0.01" />
+          </label>
+        </div>
+        <div class="calc-outputs" id="calc-out">
+          <div class="out"><span class="out-label">Camphor</span><span class="out-val" id="o-mmol">—</span><span class="out-unit">mmol</span></div>
+          <div class="out"><span class="out-label">NaBH₄ needed</span><span class="out-val" id="o-nabh4">—</span><span class="out-unit">g</span></div>
+          <div class="out"><span class="out-label">Methanol</span><span class="out-val" id="o-meoh">—</span><span class="out-unit">mL</span></div>
+          <div class="out"><span class="out-label">Theoretical product</span><span class="out-val" id="o-theory">—</span><span class="out-unit">g</span></div>
+          <div class="out major"><span class="out-label">Expected isoborneol (~90%)</span><span class="out-val" id="o-iso">—</span><span class="out-unit">g</span></div>
+          <div class="out minor"><span class="out-label">Expected borneol (~10%)</span><span class="out-val" id="o-bor">—</span><span class="out-unit">g</span></div>
+          <div class="out yield"><span class="out-label">Percent yield</span><span class="out-val" id="o-yield">—</span><span class="out-unit">%</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REFERENCES ============ -->
+    <section id="references" class="card">
+      <h2>5 · References &amp; sources</h2>
+      <p class="section-intro">
+        Every claim above is checked against these. Links are chosen to be <strong>public / educational</strong>
+        where possible; DOIs resolve to the publisher of record, and each is tagged by access level.
+      </p>
+      <ol class="refs" id="ref-list"></ol>
+      <p class="fineprint">
+        Molecular data and 3D coordinates: <a href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a>
+        (public domain, U.S. National Library of Medicine) via the PUG-REST API, retrieved 2026-10-24.
+        3D rendering by <a href="https://3dmol.csb.pitt.edu/">3Dmol.js</a> (BSD-3-Clause).
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Reduction of Camphor</strong> — an open educational resource. Content &amp; code released under the
+        <a href="LICENSE">MIT License</a>. Structure data © PubChem (public domain).</p>
+      <p class="fineprint">Built as a static site for GitHub Pages. Fact-checked 2026-10-24. Not a substitute for a supervised laboratory SOP.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.5.5/3Dmol-min.js"
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/structures.js"></script>
+  <script src="js/references.js"></script>
+  <script src="js/viewer.js"></script>
+  <script src="js/calculator.js"></script>
+</body>
+</html>
