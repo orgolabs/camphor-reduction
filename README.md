@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/orgolabs"><img src="brand/orgolabs-wordmark.png" alt="orgolabs — organic chemistry labs" width="300"></a>
+  <a href="https://github.com/orgolabs"><img src="https://orgolabs.github.io/shared/brand/orgolabs-wordmark.png" alt="orgolabs — organic chemistry labs" width="300"></a>
 </p>
 
 # Reduction of Camphor — an interactive, fact-checked explainer

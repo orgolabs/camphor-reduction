@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reduction of Camphor — Stereochemistry of NaBH₄ Reduction</title>
   <meta name="description" content="An interactive, fact-checked walkthrough of the sodium borohydride reduction of camphor to isoborneol and borneol: real 3D structures, the stereochemical mechanism (steric approach control), a step-by-step procedure, and a live stoichiometry calculator." />
-  <link rel="icon" href="brand/orgolabs-icon.svg" type="image/svg+xml" />
+  <link rel="icon" href="https://orgolabs.github.io/shared/brand/orgolabs-icon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://orgolabs.github.io/shared/styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -15,7 +15,7 @@
   <div class="brandbar">
     <div class="wrap">
       <a class="brand" href="https://github.com/orgolabs" target="_blank" rel="noopener">
-        <img src="brand/orgolabs-icon.svg" alt="" width="28" height="28" />
+        <img src="https://orgolabs.github.io/shared/brand/orgolabs-icon.svg" alt="" width="28" height="28" />
         <span class="brand-name"><b>orgo</b>labs</span>
       </a>
       <span class="brand-sep">/</span>
@@ -106,16 +106,19 @@
       <div class="viewer-grid">
         <figure class="viewer-card">
           <figcaption><span class="tag tag-start">Starting material</span><b>Camphor</b></figcaption>
+          <p class="mol-sci">(1R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-one</p>
           <div class="viewer" id="view-camphor" data-mol="camphor"></div>
           <p class="viewer-note">C=O at C2. The exo face (top) is roofed by the gem-dimethyl bridge.</p>
         </figure>
         <figure class="viewer-card">
           <figcaption><span class="tag tag-major">Major ~90%</span><b>Isoborneol</b></figcaption>
+          <p class="mol-sci">(1R,2R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol</p>
           <div class="viewer" id="view-isoborneol" data-mol="isoborneol"></div>
           <p class="viewer-note"><b>exo-OH.</b> Hydride added to the open endo face, so –OH points exo.</p>
         </figure>
         <figure class="viewer-card">
           <figcaption><span class="tag tag-minor">Minor ~10%</span><b>Borneol</b></figcaption>
+          <p class="mol-sci">(1R,2S,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol</p>
           <div class="viewer" id="view-borneol" data-mol="borneol"></div>
           <p class="viewer-note"><b>endo-OH.</b> Hydride forced past the bridge (exo), so –OH points endo.</p>
         </figure>
@@ -132,6 +135,37 @@
         NaBH₄ reduction is <strong>fast and essentially irreversible</strong>, so the product ratio is set by
         <strong>which face the hydride can reach</strong> (kinetic control), not by the stability of the products.
       </p>
+
+      <h3 class="proc-head">Reaction pathway</h3>
+      <div class="scheme">
+        <svg viewBox="0 0 690 210" role="img" aria-label="Camphor reduction pathway: camphor plus hydride forms a borate ester, then on aqueous work-up gives isoborneol (major) and borneol (minor).">
+          <defs>
+            <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+              <path class="sv-arrowhead" d="M0,0 L7,3 L0,6 Z"/>
+            </marker>
+          </defs>
+          <rect class="sv-box" x="8" y="76" width="176" height="58" rx="10"/>
+          <text class="sv-name" x="96" y="101" text-anchor="middle" font-size="15">Camphor</text>
+          <text class="sv-sub"  x="96" y="120" text-anchor="middle" font-size="11">C₁₀H₁₆O · ketone (C=O)</text>
+          <line class="sv-arrow" x1="188" y1="105" x2="250" y2="105" marker-end="url(#ah)"/>
+          <text class="sv-cond" x="219" y="90" text-anchor="middle" font-size="11">NaBH₄, MeOH</text>
+          <text class="sv-note" x="219" y="127" text-anchor="middle" font-size="10">H⁻ → endo face</text>
+          <rect class="sv-box-inter" x="258" y="76" width="150" height="58" rx="10"/>
+          <text class="sv-name" x="333" y="101" text-anchor="middle" font-size="14">Borate ester</text>
+          <text class="sv-sub"  x="333" y="120" text-anchor="middle" font-size="11">C2–O–B alkoxide</text>
+          <line class="sv-arrow" x1="412" y1="105" x2="452" y2="105"/>
+          <text class="sv-cond" x="432" y="90" text-anchor="middle" font-size="11">H₂O</text>
+          <path class="sv-arrow" d="M452,105 L472,70" marker-end="url(#ah)"/>
+          <path class="sv-arrow" d="M452,105 L472,140" marker-end="url(#ah)"/>
+          <rect class="sv-box-major" x="478" y="44" width="204" height="52" rx="10"/>
+          <text class="sv-name" x="580" y="66" text-anchor="middle" font-size="14">Isoborneol (exo-OH)</text>
+          <text class="sv-sub"  x="580" y="84" text-anchor="middle" font-size="11">major · ~90%</text>
+          <rect class="sv-box-minor" x="478" y="114" width="204" height="52" rx="10"/>
+          <text class="sv-name" x="580" y="136" text-anchor="middle" font-size="14">Borneol (endo-OH)</text>
+          <text class="sv-sub"  x="580" y="154" text-anchor="middle" font-size="11">minor · ~10%</text>
+        </svg>
+      </div>
+      <p class="scheme-caption">Hydride adds irreversibly to the open <em>endo</em> face, placing the new –OH <em>exo</em> (isoborneol, major). The initially formed borate ester is hydrolyzed in the aqueous work-up to release the free alcohol.</p>
 
       <div class="mech-grid">
         <article class="mech-step">
@@ -191,11 +225,15 @@
           <tr><th scope="col">Property</th><th scope="col">Camphor</th><th scope="col">Isoborneol</th><th scope="col">Borneol</th></tr>
         </thead>
         <tbody>
+          <tr><th scope="row">Common name</th><td>camphor</td><td>isoborneol</td><td>borneol</td></tr>
+          <tr><th scope="row">Systematic (IUPAC) name</th>
+            <td>(1R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-one</td>
+            <td>(1R,2R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol</td>
+            <td>(1R,2S,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol</td></tr>
           <tr><th scope="row">Formula</th><td>C₁₀H₁₆O</td><td>C₁₀H₁₈O</td><td>C₁₀H₁₈O</td></tr>
           <tr><th scope="row">Molar mass (g/mol)</th><td>152.23</td><td>154.25</td><td>154.25</td></tr>
           <tr><th scope="row">–OH orientation</th><td>— (ketone)</td><td>exo</td><td>endo</td></tr>
           <tr><th scope="row">Role in NaBH₄ reduction</th><td>reactant</td><td>major (~90%)</td><td>minor (~10%)</td></tr>
-          <tr><th scope="row">Configuration</th><td>(1R,4R)</td><td>(1R,2R,4R)</td><td>(1R,2S,4R)</td></tr>
           <tr><th scope="row">PubChem CID</th><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/159055">159055</a></td><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/6321405">6321405</a></td><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/6552009">6552009</a></td></tr>
         </tbody>
       </table>
@@ -323,11 +361,19 @@
     </div>
   </footer>
 
+  <script>
+    // Which molecules to render (keys exist in js/structures.js). Rendered by shared/viewer.js.
+    window.VIEWERS = [
+      { id: "view-camphor",    key: "camphor" },
+      { id: "view-isoborneol", key: "isoborneol" },
+      { id: "view-borneol",    key: "borneol" }
+    ];
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.5.5/3Dmol-min.js"
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/structures.js"></script>
   <script src="js/references.js"></script>
-  <script src="js/viewer.js"></script>
+  <script src="https://orgolabs.github.io/shared/viewer.js"></script>
   <script src="js/calculator.js"></script>
 </body>
 </html>
