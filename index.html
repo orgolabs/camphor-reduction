@@ -139,33 +139,23 @@
       </p>
 
       <h3 class="proc-head">Reaction pathway</h3>
-      <div class="scheme">
-        <svg viewBox="0 0 760 190" role="img" aria-label="Camphor reduction pathway: camphor plus hydride forms a borate ester, then on aqueous work-up gives isoborneol (major) and borneol (minor).">
-          <defs>
-            <marker id="ah" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto">
-              <path class="sv-arrowhead" d="M0,0 L9,4 L0,8 Z"/>
-            </marker>
-          </defs>
-          <rect class="sv-box" x="8" y="70" width="168" height="56" rx="10"/>
-          <text class="sv-name" x="92" y="94"  text-anchor="middle" font-size="14">Camphor</text>
-          <text class="sv-sub"  x="92" y="113" text-anchor="middle" font-size="11">C₁₀H₁₆O · ketone</text>
-          <line class="sv-arrow" x1="184" y1="98" x2="274" y2="98" marker-end="url(#ah)"/>
-          <text class="sv-cond" x="229" y="84"  text-anchor="middle" font-size="11">NaBH₄, MeOH</text>
-          <text class="sv-note" x="229" y="116" text-anchor="middle" font-size="10">H⁻ → endo face</text>
-          <rect class="sv-box-inter" x="282" y="70" width="150" height="56" rx="10"/>
-          <text class="sv-name" x="357" y="94"  text-anchor="middle" font-size="14">Borate ester</text>
-          <text class="sv-sub"  x="357" y="113" text-anchor="middle" font-size="11">C2–O–B alkoxide</text>
-          <line class="sv-arrow" x1="440" y1="98" x2="486" y2="98"/>
-          <text class="sv-cond" x="463" y="84" text-anchor="middle" font-size="11">H₂O</text>
-          <path class="sv-arrow" d="M486,98 L556,64"  marker-end="url(#ah)"/>
-          <path class="sv-arrow" d="M486,98 L556,134" marker-end="url(#ah)"/>
-          <rect class="sv-box-major" x="562" y="38" width="190" height="52" rx="10"/>
-          <text class="sv-name" x="657" y="60" text-anchor="middle" font-size="14">Isoborneol (exo-OH)</text>
-          <text class="sv-sub"  x="657" y="78" text-anchor="middle" font-size="11">major · ~90%</text>
-          <rect class="sv-box-minor" x="562" y="110" width="190" height="52" rx="10"/>
-          <text class="sv-name" x="657" y="132" text-anchor="middle" font-size="14">Borneol (endo-OH)</text>
-          <text class="sv-sub"  x="657" y="150" text-anchor="middle" font-size="11">minor · ~10%</text>
-        </svg>
+      <div class="pathway">
+        <div class="path-node">
+          <div class="path-card"><img src="https://orgolabs.github.io/shared/mol2d/camphor.png" alt="Camphor skeletal structure" loading="lazy"></div>
+          <p class="path-name">Camphor</p><p class="path-sub">C₁₀H₁₆O · ketone</p>
+        </div>
+        <div class="path-op">
+          <span class="cond">NaBH₄, MeOH</span><span class="shaft" aria-hidden="true">→</span><span class="sub">H⁻ to endo face</span>
+        </div>
+        <div class="path-node major">
+          <div class="path-card"><img src="https://orgolabs.github.io/shared/mol2d/isoborneol.png" alt="Isoborneol skeletal structure" loading="lazy"></div>
+          <p class="path-name">Isoborneol</p><p class="path-sub">exo-OH · major ~90%</p>
+        </div>
+        <div class="path-op plus"><span class="shaft" aria-hidden="true">+</span></div>
+        <div class="path-node minor">
+          <div class="path-card"><img src="https://orgolabs.github.io/shared/mol2d/borneol.png" alt="Borneol skeletal structure" loading="lazy"></div>
+          <p class="path-name">Borneol</p><p class="path-sub">endo-OH · minor ~10%</p>
+        </div>
       </div>
       <p class="scheme-caption">Hydride adds irreversibly to the open <em>endo</em> face, placing the new –OH <em>exo</em> (isoborneol, major). The initially formed borate ester is hydrolyzed in the aqueous work-up to release the free alcohol.</p>
 
