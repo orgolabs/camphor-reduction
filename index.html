@@ -3,373 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reduction of Camphor — Stereochemistry of NaBH₄ Reduction</title>
-  <meta name="description" content="An interactive, fact-checked walkthrough of the sodium borohydride reduction of camphor to isoborneol and borneol: real 3D structures, the stereochemical mechanism (steric approach control), a step-by-step procedure, and a live stoichiometry calculator." />
+  <title>Reduction of Camphor — Stereochemistry of NaBH4 Reduction</title>
+  <meta name="description" content="An interactive, fact-checked walkthrough of the sodium borohydride reduction of camphor to isoborneol and borneol: real 3D structures, the mechanism (steric approach control), the lab procedure, and a live yield calculator." />
   <link rel="icon" href="https://orgolabs.github.io/shared/brand/orgolabs-icon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
   <link rel="stylesheet" href="https://orgolabs.github.io/shared/styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <div class="brandbar">
-    <div class="wrap">
-      <a class="brand" href="https://github.com/orgolabs" target="_blank" rel="noopener">
-        <img src="https://orgolabs.github.io/shared/brand/orgolabs-icon.svg" alt="" width="28" height="28" />
-        <span class="brand-name"><b>orgo</b>labs</span>
-      </a>
-      <span class="brand-sep">/</span>
-      <span class="brand-lab">Camphor Reduction</span>
-      <a class="brand-repo" href="https://github.com/orgolabs/camphor-reduction" target="_blank" rel="noopener">View source ↗</a>
-    </div>
-  </div>
-
-  <header class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Interactive organic chemistry · diastereoselective reduction</p>
-      <h1>The Reduction of Camphor</h1>
-      <p class="lede">
-        Sodium borohydride turns the rigid bicyclic ketone <strong>camphor</strong> into a pair of
-        diastereomeric alcohols — <strong>isoborneol</strong> (major) and <strong>borneol</strong> (minor).
-        Which one wins, and <em>why</em>, is a classic lesson in <strong>steric approach control</strong>.
-        Rotate the real 3D molecules, follow the mechanism, and scale the experiment below.
-      </p>
-      <div class="reaction-strip" aria-label="Reaction summary">
-        <span class="mol">camphor<br><small><span class="chem">\ce{C10H16O}</span></small></span>
-        <span class="arrow">
-          <span class="above"><span class="chem">\ce{NaBH4}</span></span>
-          <span class="shaft">→</span>
-          <span class="below">MeOH, 0&nbsp;°C → rt</span>
-        </span>
-        <span class="mol-pair">
-          <span class="mol major">isoborneol<br><small><span class="chem">\ce{C10H18O}</span> · ~90%</small></span>
-          <span class="plus">+</span>
-          <span class="mol minor">borneol<br><small><span class="chem">\ce{C10H18O}</span> · ~10%</small></span>
-        </span>
-      </div>
-    </div>
-  </header>
-
-  <nav class="tocbar" aria-label="Section navigation">
-    <div class="wrap">
-      <a href="#about">About</a>
-      <a href="#viewers">3D structures</a>
-      <a href="#mechanism">Mechanism</a>
-      <a href="#procedure">Procedure</a>
-      <a href="#calculator">Calculator</a>
-      <a href="#references">References</a>
-    </div>
-  </nav>
-
-  <main id="main" class="wrap">
-
-    <!-- ============ ABOUT ============ -->
-    <section id="about" class="card">
-      <h2>What is camphor — and what are we making?</h2>
-      <p>
-        Camphor is a <strong>terpene</strong> originally obtained from the wood of the camphor laurel
-        (<em>Camphora officinarum</em>, native to east and south Asia). You have probably met it as the
-        cooling smell in <strong>Vicks VapoRub</strong>; over the centuries it has also been used as an
-        insect repellent, a food and perfume additive, and a decongestant in traditional medicine.
-      </p>
-      <p>
-        Reducing camphor's carbonyl (C=O) group gives two <strong>diastereomeric</strong> alcohols —
-        <strong>isoborneol</strong> (exo-OH) and <strong>borneol</strong> (endo-OH). They share the same
-        connectivity but differ only in how the –OH points on the rigid cage. This experiment uses
-        <strong>sodium borohydride (NaBH₄)</strong>. The more powerful hydride <strong>lithium aluminium
-        hydride (LiAlH₄)</strong> also reduces camphor, but it must be kept away from water and protic
-        solvents, which makes it trickier and more hazardous — so NaBH₄ is the safer teaching choice.
-      </p>
-    </section>
-
-    <!-- ============ 3D VIEWERS ============ -->
-    <section id="viewers" class="card">
-      <h2>1 · The three molecules in real 3D</h2>
-      <p class="section-intro">
-        These are <strong>real geometries</strong> from PubChem (not sketches): drag to rotate, scroll to zoom.
-        Watch the one-carbon bridge with its two methyl groups (the <em>7,7-gem-dimethyl</em> bridge) — it is the
-        reason the reaction is selective.
-      </p>
-
-      <div class="viewer-controls" role="group" aria-label="3D display controls">
-        <div class="ctrl-group">
-          <span class="ctrl-label">Style</span>
-          <button type="button" class="btn" data-style="stick">Stick</button>
-          <button type="button" class="btn is-active" data-style="ballstick">Ball &amp; stick</button>
-          <button type="button" class="btn" data-style="sphere">Space-fill</button>
-        </div>
-        <div class="ctrl-group">
-          <button type="button" class="btn toggle" id="spinBtn" aria-pressed="false">Spin</button>
-          <button type="button" class="btn toggle" id="hBtn" aria-pressed="true">Show H</button>
-          <button type="button" class="btn toggle" id="ohBtn" aria-pressed="false">Highlight O</button>
-        </div>
-      </div>
-
-      <div class="viewer-grid">
-        <figure class="viewer-card">
-          <figcaption><span class="tag tag-start">Starting material</span><b>Camphor</b></figcaption>
-          <p class="mol-sci">(1R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-one</p>
-          <div class="viewer" id="view-camphor" data-mol="camphor"></div>
-          <p class="viewer-note">C=O at C2. The exo face (top) is roofed by the gem-dimethyl bridge.</p>
-        </figure>
-        <figure class="viewer-card">
-          <figcaption><span class="tag tag-major">Major ~90%</span><b>Isoborneol</b></figcaption>
-          <p class="mol-sci">(1R,2R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol</p>
-          <div class="viewer" id="view-isoborneol" data-mol="isoborneol"></div>
-          <p class="viewer-note"><b>exo-OH.</b> Hydride added to the open endo face, so –OH points exo.</p>
-        </figure>
-        <figure class="viewer-card">
-          <figcaption><span class="tag tag-minor">Minor ~10%</span><b>Borneol</b></figcaption>
-          <p class="mol-sci">(1R,2S,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol</p>
-          <div class="viewer" id="view-borneol" data-mol="borneol"></div>
-          <p class="viewer-note"><b>endo-OH.</b> Hydride forced past the bridge (exo), so –OH points endo.</p>
-        </figure>
-      </div>
-      <p id="viewer-fallback" class="viewer-fallback" hidden>
-        The 3D viewer library (3Dmol.js) could not load from the CDN. Check your network connection and reload.
-      </p>
-    </section>
-
-    <!-- ============ MECHANISM ============ -->
-    <section id="mechanism" class="card">
-      <h2>2 · Why isoborneol wins: steric approach control</h2>
-      <p class="section-intro">
-        NaBH₄ reduction is <strong>fast and essentially irreversible</strong>, so the product ratio is set by
-        <strong>which face the hydride can reach</strong> (kinetic control), not by the stability of the products.
-      </p>
-
-      <h3 class="proc-head">Reaction pathway</h3>
-      <div class="pathway">
-        <div class="path-node">
-          <div class="path-card"><img src="https://orgolabs.github.io/shared/mol2d/camphor.png" alt="Camphor skeletal structure" loading="lazy"></div>
-          <p class="path-name">Camphor</p><p class="path-sub">C₁₀H₁₆O · ketone</p>
-        </div>
-        <div class="path-op">
-          <span class="cond">NaBH₄, MeOH</span><span class="shaft" aria-hidden="true">→</span><span class="sub">H⁻ to endo face</span>
-        </div>
-        <div class="path-node major">
-          <div class="path-card"><img src="https://orgolabs.github.io/shared/mol2d/isoborneol.png" alt="Isoborneol skeletal structure" loading="lazy"></div>
-          <p class="path-name">Isoborneol</p><p class="path-sub">exo-OH · major ~90%</p>
-        </div>
-        <div class="path-op plus"><span class="shaft" aria-hidden="true">+</span></div>
-        <div class="path-node minor">
-          <div class="path-card"><img src="https://orgolabs.github.io/shared/mol2d/borneol.png" alt="Borneol skeletal structure" loading="lazy"></div>
-          <p class="path-name">Borneol</p><p class="path-sub">endo-OH · minor ~10%</p>
-        </div>
-      </div>
-      <p class="scheme-caption">Hydride adds irreversibly to the open <em>endo</em> face, placing the new –OH <em>exo</em> (isoborneol, major). The initially formed borate ester is hydrolyzed in the aqueous work-up to release the free alcohol.</p>
-
-      <div class="mech-grid">
-        <article class="mech-step">
-          <span class="step-num">1</span>
-          <h3>A roof over the exo face</h3>
-          <p>
-            Camphor is <em>1,7,7-trimethylbicyclo[2.2.1]heptan-2-one</em>. The two methyl groups on the
-            one-carbon bridge (C7) sit directly over the <strong>exo</strong> face of the C2 carbonyl,
-            blocking approach from that side.
-          </p>
-        </article>
-        <article class="mech-step major-accent">
-          <span class="step-num">2</span>
-          <h3>Hydride attacks endo → major</h3>
-          <p>
-            The small hydride (H⁻ from BH₄⁻) takes the open <strong>endo</strong> face. Adding H to the endo
-            side pushes the new –OH to the <strong>exo</strong> position, giving <strong>isoborneol</strong>
-            as the major product.
-          </p>
-        </article>
-        <article class="mech-step minor-accent">
-          <span class="step-num">3</span>
-          <h3>Exo attack → minor</h3>
-          <p>
-            A smaller fraction of hydride pushes past the bridge from the <strong>exo</strong> face. That sends
-            the –OH <strong>endo</strong>, giving <strong>borneol</strong>. Hence the ~90 : 10 preference for
-            isoborneol.
-          </p>
-        </article>
-      </div>
-
-      <div class="callout info">
-        <h3>How the hydride is delivered (and why water is added at the end)</h3>
-        <p>
-          Borohydride (BH₄⁻) is a <strong>hydride shuttle</strong>: one NaBH₄ can reduce up to
-          <strong>four</strong> camphor molecules, handing over one H⁻ at a time. Each transfer builds up a
-          <strong>borate ester</strong> (the new alkoxide bound to boron). The free alcohol is only released
-          during the <strong>aqueous work-up</strong> — which is exactly why the procedure adds ice-cold water
-          at the end: it hydrolyzes the borate ester and destroys any leftover NaBH₄.
-        </p>
-      </div>
-
-      <div class="callout">
-        <h3>A note on nuance (for the curious)</h3>
-        <p>
-          "Steric approach control" is the picture H.&nbsp;C.&nbsp;Brown introduced using exactly these rigid
-          bicyclic ketones, and it captures the result well. The full modern picture also includes
-          <strong>torsional (eclipsing) strain</strong> in the transition state and electronic effects; see
-          Wigfield's review for the detailed mechanistic debate. For camphor, the bulky bridge dominates and
-          the outcome is unambiguous.
-        </p>
-      </div>
-
-      <div class="table-scroll">
-      <table class="facts">
-        <caption>Key facts (fact-checked against PubChem &amp; the primary literature)</caption>
-        <thead>
-          <tr><th scope="col">Property</th><th scope="col">Camphor</th><th scope="col">Isoborneol</th><th scope="col">Borneol</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Common name</th><td>camphor</td><td>isoborneol</td><td>borneol</td></tr>
-          <tr><th scope="row">Systematic (IUPAC) name</th>
-            <td>(1R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-one</td>
-            <td>(1R,2R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol</td>
-            <td>(1R,2S,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol</td></tr>
-          <tr><th scope="row">Formula</th><td><span class="chem">\ce{C10H16O}</span></td><td><span class="chem">\ce{C10H18O}</span></td><td><span class="chem">\ce{C10H18O}</span></td></tr>
-          <tr><th scope="row">Molar mass (g/mol)</th><td>152.23</td><td>154.25</td><td>154.25</td></tr>
-          <tr><th scope="row">–OH orientation</th><td>— (ketone)</td><td>exo</td><td>endo</td></tr>
-          <tr><th scope="row">Role in NaBH₄ reduction</th><td>reactant</td><td>major (~90%)</td><td>minor (~10%)</td></tr>
-          <tr><th scope="row">PubChem CID</th><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/159055">159055</a></td><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/6321405">6321405</a></td><td><a href="https://pubchem.ncbi.nlm.nih.gov/compound/6552009">6552009</a></td></tr>
-        </tbody>
-      </table>
-      </div>
-      <p class="fineprint">
-        The ~90 : 10 ratio is the commonly reported figure for NaBH₄ in methanol; exact values (≈85–92% isoborneol)
-        vary with solvent and conditions. Primary data: Brown &amp; Muzzio, <em>JACS</em> 1966 (ref. 1).
-      </p>
-    </section>
-
-    <!-- ============ PROCEDURE ============ -->
-    <section id="procedure" class="card">
-      <h2>3 · Step-by-step laboratory procedure</h2>
-      <p class="section-intro">
-        This is the micro-scale "Week&nbsp;3" procedure from the course lab manual, reproduced here so you can
-        follow it alongside the 3D structures and the calculator. Always follow your instructor's version and
-        your lab's safety rules — this page is a study aid, not a substitute for a supervised SOP.
-      </p>
-      <a class="dl-btn" href="docs/reduction-of-camphor-lab-manual.pdf" target="_blank" rel="noopener">⬇ Download the full lab manual (PDF)</a>
-
-      <h3 class="proc-head">Reagents &amp; materials (micro scale, per 0.100&nbsp;g camphor)</h3>
-      <table class="reagents">
-        <thead><tr><th scope="col">Reagent</th><th scope="col">Amount</th><th scope="col">Role</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Camphor</th><td>0.100&nbsp;g (0.66&nbsp;mmol)</td><td>substrate (the ketone)</td></tr>
-          <tr><th scope="row">Methanol</th><td>0.5&nbsp;mL</td><td>protic solvent</td></tr>
-          <tr><th scope="row">Sodium borohydride, NaBH₄</th><td>~0.10&nbsp;g (2.6&nbsp;mmol, ≈4 molar equiv)</td><td>hydride source (large excess)</td></tr>
-          <tr><th scope="row">Ice-cold water</th><td>3.5&nbsp;mL</td><td>quench &amp; hydrolyze borate ester</td></tr>
-          <tr><th scope="row">Diethyl ether</th><td>4.5&nbsp;mL</td><td>extraction solvent</td></tr>
-          <tr><th scope="row">Anhydrous MgSO₄</th><td>spatula tip</td><td>drying agent</td></tr>
-        </tbody>
-      </table>
-
-      <h3 class="proc-head">Procedure</h3>
-      <ol class="procedure">
-        <li>Weigh out <b>0.100&nbsp;g camphor</b> and transfer it to a 10-mL Erlenmeyer flask.</li>
-        <li>In the fume hood, add <b>0.5&nbsp;mL methanol</b> to the camphor.</li>
-        <li>Stir with a glass rod until the camphor has completely dissolved.</li>
-        <li>Have an <b>ice bath</b> ready.</li>
-        <li>Weigh about <b>0.10&nbsp;g sodium borohydride</b> into a vial.</li>
-        <li>Cautiously and intermittently add the NaBH₄ to the solution in small portions. It will <b>evolve gas (H₂) and warm up</b>; when it rises above room temperature, return the flask to the ice bath.</li>
-        <li>Heat the flask on a <b>warm sand bath for ~10&nbsp;minutes</b>.</li>
-        <li>Allow the reaction to cool to room temperature.</li>
-        <li>Carefully add <b>3.5&nbsp;mL ice-cold water</b>.</li>
-        <li>Collect the white solid by vacuum filtration on a <b>Hirsch funnel</b>.</li>
-        <li>Transfer the solid to a vial.</li>
-        <li>Add <b>4.5&nbsp;mL diethyl ether</b> to dissolve the product, then add <b>anhydrous magnesium sulfate</b> to dry the solution.</li>
-        <li>Remove the drying agent by transferring the solution into another <b>pre-weighed</b> vial.</li>
-        <li>Evaporate the ether to leave the product.</li>
-      </ol>
-
-      <h3 class="proc-head">Analysis of the alcohol product</h3>
-      <ol class="procedure">
-        <li>Weigh the product and calculate the <b>percentage yield</b> (use the calculator below).</li>
-        <li>Determine the <b>melting point</b>.</li>
-        <li>Record the <b>infrared spectrum</b> — look for loss of the C=O band (~1740&nbsp;cm⁻¹) and a new broad O–H band (~3300&nbsp;cm⁻¹) confirming the ketone became an alcohol.</li>
-      </ol>
-
-      <div class="safety">
-        <b>Special instructions &amp; safety:</b> All reactants and products are highly volatile — keep them in
-        tightly sealed containers and work in a well-ventilated area or fume hood. <b>Diethyl ether is extremely
-        flammable</b> — no flames or ignition sources nearby. NaBH₄ releases flammable H₂ and is corrosive;
-        methanol is flammable and toxic. Wear goggles and gloves.
-      </div>
-      <div class="safety" style="margin-top:12px">
-        <b>Waste disposal:</b> Aqueous solutions from the work-up go in the designated <b>aqueous waste</b>
-        container. Residual methanol or ether goes in the <b>non-halogenated organic waste</b> container.
-      </div>
-    </section>
-
-    <!-- ============ CALCULATOR ============ -->
-    <section id="calculator" class="card">
-      <h2>4 · Live scale &amp; yield calculator</h2>
-      <p class="section-intro">
-        Pre-filled with the lab manual's micro-scale amounts — change any input and every quantity updates
-        instantly. Molar masses: camphor 152.23, product 154.25, NaBH₄ 37.83&nbsp;g/mol; methanol estimated at
-        5&nbsp;mL per gram of camphor. The manual uses ~4 molar equivalents of NaBH₄ (a deliberate large excess).
-      </p>
-      <div class="calc">
-        <div class="calc-inputs">
-          <label>Camphor starting mass (g)
-            <input type="number" id="in-camphor" value="0.100" min="0" step="0.01" />
-          </label>
-          <label>NaBH₄ (molar equivalents)
-            <input type="number" id="in-equiv" value="4.0" min="0" step="0.1" />
-            <small>1 equiv NaBH₄ delivers 4 hydrides; manual ≈ 4 equiv</small>
-          </label>
-          <label>Isolated product mass (g) <span class="opt">optional</span>
-            <input type="number" id="in-isolated" value="0.080" min="0" step="0.01" />
-          </label>
-        </div>
-        <div class="calc-outputs" id="calc-out">
-          <div class="out"><span class="out-label">Camphor</span><span class="out-val" id="o-mmol">—</span><span class="out-unit">mmol</span></div>
-          <div class="out"><span class="out-label">NaBH₄ needed</span><span class="out-val" id="o-nabh4">—</span><span class="out-unit">g</span></div>
-          <div class="out"><span class="out-label">Methanol</span><span class="out-val" id="o-meoh">—</span><span class="out-unit">mL</span></div>
-          <div class="out"><span class="out-label">Theoretical product</span><span class="out-val" id="o-theory">—</span><span class="out-unit">g</span></div>
-          <div class="out major"><span class="out-label">Expected isoborneol (~90%)</span><span class="out-val" id="o-iso">—</span><span class="out-unit">g</span></div>
-          <div class="out minor"><span class="out-label">Expected borneol (~10%)</span><span class="out-val" id="o-bor">—</span><span class="out-unit">g</span></div>
-          <div class="out yield"><span class="out-label">Percent yield</span><span class="out-val" id="o-yield">—</span><span class="out-unit">%</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ REFERENCES ============ -->
-    <section id="references" class="card">
-      <h2>5 · References &amp; sources</h2>
-      <p class="section-intro">
-        Every claim above is checked against these. Links are chosen to be <strong>public / educational</strong>
-        where possible; DOIs resolve to the publisher of record, and each is tagged by access level.
-      </p>
-      <ol class="refs" id="ref-list"></ol>
-      <p class="fineprint">
-        Molecular data and 3D coordinates: <a href="https://pubchem.ncbi.nlm.nih.gov/compound/159055">PubChem</a>
-        (public domain, U.S. National Library of Medicine) via the PUG-REST API, retrieved 2026-10-24
-        — camphor CID 159055, isoborneol CID 6321405, borneol CID 6552009, all in the natural (1R,4R) series.
-        3D rendering by <a href="https://3dmol.csb.pitt.edu/">3Dmol.js</a> (BSD-3-Clause).
-      </p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <p><strong>Reduction of Camphor</strong> — an open educational resource. Content &amp; code released under the
-        <a href="LICENSE">MIT License</a>. Structure data © PubChem (public domain).</p>
-      <p class="fineprint">Built as a static site for GitHub Pages. Fact-checked 2026-10-24. Not a substitute for a supervised laboratory SOP.</p>
-    </div>
-  </footer>
+  <noscript><p style="padding:24px">This interactive lab needs JavaScript. Source: <a href="https://github.com/orgolabs/camphor-reduction">github.com/orgolabs/camphor-reduction</a></p></noscript>
 
   <script>
-    // Which molecules to render (keys exist in js/structures.js). Rendered by shared/viewer.js.
-    window.VIEWERS = [
-      { id: "view-camphor",    key: "camphor" },
-      { id: "view-isoborneol", key: "isoborneol" },
-      { id: "view-borneol",    key: "borneol" }
-    ];
+    window.LAB = {
+      repo: "camphor-reduction",
+      labName: "Camphor Reduction",
+      eyebrow: "Interactive organic chemistry · diastereoselective reduction",
+      title: "The Reduction of Camphor",
+      lede: "Sodium borohydride turns the rigid bicyclic ketone <strong>camphor</strong> into a pair of diastereomeric alcohols — <strong>isoborneol</strong> (major) and <strong>borneol</strong> (minor). Which one wins, and <em>why</em>, is a classic lesson in <strong>steric approach control</strong>. Rotate the real 3D molecules, follow the mechanism, and scale the experiment below.",
+      reaction: "\\ce{C10H16O ->[\\text{NaBH4}][\\text{MeOH}] C10H18O}",
+      content: "content.md",
+      viewers: [
+        { id: "view-camphor", key: "camphor", kind: "start", role: "Starting material", name: "Camphor",
+          iupac: "(1R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-one", note: "C=O at C2. The exo face (top) is roofed by the gem-dimethyl bridge." },
+        { id: "view-isoborneol", key: "isoborneol", kind: "major", role: "Major ~90%", name: "Isoborneol",
+          iupac: "(1R,2R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol", note: "<b>exo-OH.</b> Hydride added to the open endo face, so –OH points exo." },
+        { id: "view-borneol", key: "borneol", kind: "minor", role: "Minor ~10%", name: "Borneol",
+          iupac: "(1R,2S,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol", note: "<b>endo-OH.</b> Hydride forced past the bridge (exo), so –OH points endo." }
+      ],
+      pathway: [
+        { node: { img: "camphor.png", name: "Camphor", sub: "$\\ce{C10H16O}$ · ketone" } },
+        { op: { cond: "\\ce{NaBH4}", sub: "MeOH · endo H⁻" } },
+        { node: { img: "isoborneol.png", name: "Isoborneol", sub: "exo-OH · major ~90%", kind: "major" } },
+        { plus: true },
+        { node: { img: "borneol.png", name: "Borneol", sub: "endo-OH · minor ~10%", kind: "minor" } }
+      ],
+      pathwayCaption: "Hydride adds irreversibly to the open <em>endo</em> face, placing –OH <em>exo</em> (isoborneol, major). The borate ester is hydrolyzed in the aqueous work-up.",
+      calculator: {
+        intro: "Pre-filled with the lab manual's micro-scale amounts — change any input and everything updates. Molar masses: camphor 152.23, product 154.25, $\\ce{NaBH4}$ 37.83 g/mol; methanol at 5 mL/g.",
+        inputs: [
+          { id: "in-camphor", label: "Camphor starting mass (g)", value: "0.100", step: "0.01" },
+          { id: "in-equiv", label: "NaBH₄ (molar equivalents)", value: "4.0", step: "0.1", note: "1 equiv delivers 4 hydrides; manual ≈ 4 equiv" },
+          { id: "in-isolated", label: "Isolated product mass (g)", value: "0.080", step: "0.01", optional: true }
+        ],
+        outputs: [
+          { id: "o-mmol", label: "Camphor", unit: "mmol" },
+          { id: "o-nabh4", label: "NaBH₄ needed", unit: "g" },
+          { id: "o-meoh", label: "Methanol", unit: "mL" },
+          { id: "o-theory", label: "Theoretical product", unit: "g" },
+          { id: "o-iso", label: "Expected isoborneol (~90%)", unit: "g", kind: "major" },
+          { id: "o-bor", label: "Expected borneol (~10%)", unit: "g", kind: "minor" },
+          { id: "o-yield", label: "Percent yield", unit: "%", kind: "yield" }
+        ],
+        compute: function (v) {
+          var MWc = 152.23, MWp = 154.25, MWn = 37.83;
+          if (!(v["in-camphor"] > 0)) return {};
+          var c = v["in-camphor"], theory = c / MWc * MWp;
+          var o = {
+            "o-mmol": (c / MWc * 1000).toFixed(2),
+            "o-nabh4": (c / MWc * v["in-equiv"] * MWn).toFixed(3),
+            "o-meoh": (c * 5).toFixed(2),
+            "o-theory": theory.toFixed(3),
+            "o-iso": (theory * 0.90).toFixed(3),
+            "o-bor": (theory * 0.10).toFixed(3)
+          };
+          o["o-yield"] = v["in-isolated"] > 0 ? (v["in-isolated"] / theory * 100).toFixed(1) : "";
+          return o;
+        }
+      },
+      references: [
+        { authors: "Brown, H. C.; Muzzio, J.", title: "Rates of Reaction of Sodium Borohydride with Bicyclic Ketones. Steric Approach Control and Steric Departure Control in the Reactions of Rigid Bicyclic Systems", meta: "J. Am. Chem. Soc. 1966, 88 (12), 2811–2822.", note: "The primary source: introduces “steric approach control” using camphor; the origin of the isoborneol-major result.", url: "https://doi.org/10.1021/ja00964a034", linkText: "doi.org/10.1021/ja00964a034", access: "paywall" },
+        { authors: "Wigfield, D. C.", title: "Stereochemistry and mechanism of ketone reductions by hydride reagents", meta: "Tetrahedron 1979, 35 (4), 449–462.", note: "Classic review weighing steric approach, torsional strain and electronic effects.", url: "https://doi.org/10.1016/0040-4020(79)80140-4", linkText: "doi.org/10.1016/0040-4020(79)80140-4", access: "paywall" },
+        { authors: "Markgraf, J. H.", title: "Stereochemical correlations in the camphor series", meta: "J. Chem. Educ. 1967, 44 (1), 36.", note: "Education-oriented treatment of exo/endo relationships in the bornane/camphor system.", url: "https://doi.org/10.1021/ed044p36", linkText: "doi.org/10.1021/ed044p36", access: "paywall" },
+        { authors: "PubChem, U.S. National Library of Medicine.", title: "Camphor (CID 159055), Isoborneol (CID 6321405), Borneol (CID 6552009)", meta: "Public-domain compound records in the natural (1R,4R) series.", note: "Free and public. The 3D coordinates come directly from these defined-stereochemistry records.", url: "https://pubchem.ncbi.nlm.nih.gov/compound/159055", linkText: "pubchem.ncbi.nlm.nih.gov/compound/159055", access: "open" },
+        { authors: "Wikipedia contributors.", title: "Borneol / Isoborneol — diastereomer definitions and reduction methods", meta: "Open reference corroborating the exo/endo assignment.", note: "Free and public; a convenient entry point with onward citations.", url: "https://en.wikipedia.org/wiki/Borneol", linkText: "en.wikipedia.org/wiki/Borneol", access: "open" },
+        { authors: "Rego, N.; Koes, D.", title: "3Dmol.js: molecular visualization with WebGL", meta: "Bioinformatics 2015, 31 (8), 1322–1324.", note: "The open-source (BSD-3) library rendering the interactive structures.", url: "https://doi.org/10.1093/bioinformatics/btu829", linkText: "doi.org/10.1093/bioinformatics/btu829", access: "open" }
+      ]
+    };
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.5.5/3Dmol-min.js"
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/structures.js"></script>
-  <script src="js/references.js"></script>
-  <script src="https://orgolabs.github.io/shared/viewer.js"></script>
-  <script src="https://orgolabs.github.io/shared/nav.js"></script>
-  <script src="https://orgolabs.github.io/shared/chem.js"></script>
-  <script src="js/calculator.js"></script>
+  <script src="https://orgolabs.github.io/shared/lab.js"></script>
 </body>
 </html>
