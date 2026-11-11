@@ -23,34 +23,34 @@
       content: "content.md",
       viewers: [
         { id: "view-camphor", key: "camphor", kind: "start", role: "Starting material", name: "Camphor",
-          iupac: "(1R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-one", note: "C=O at C2. The exo face (top) is roofed by the gem-dimethyl bridge." },
-        { id: "view-isoborneol", key: "isoborneol", kind: "major", role: "Major ~90%", name: "Isoborneol",
+          iupac: "(1R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-one", note: "$\\ce{C=O}$ at C2. The exo face (top) is roofed by the gem-dimethyl bridge." },
+        { id: "view-isoborneol", key: "isoborneol", kind: "major", role: "Major ≈90%", name: "Isoborneol",
           iupac: "(1R,2R,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol", note: "<b>exo-OH.</b> Hydride added to the open endo face, so –OH points exo." },
-        { id: "view-borneol", key: "borneol", kind: "minor", role: "Minor ~10%", name: "Borneol",
+        { id: "view-borneol", key: "borneol", kind: "minor", role: "Minor ≈10%", name: "Borneol",
           iupac: "(1R,2S,4R)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-ol", note: "<b>endo-OH.</b> Hydride forced past the bridge (exo), so –OH points endo." }
       ],
       pathway: [
         { node: { img: "camphor.png", name: "Camphor", sub: "$\\ce{C10H16O}$ · ketone" } },
-        { op: { cond: "\\ce{NaBH4}", sub: "MeOH · endo H⁻" } },
-        { node: { img: "isoborneol.png", name: "Isoborneol", sub: "exo-OH · major ~90%", kind: "major" } },
+        { op: { cond: "\\ce{NaBH4}", sub: "MeOH · endo $\\ce{H-}$" } },
+        { node: { img: "isoborneol.png", name: "Isoborneol", sub: "exo-OH · major ≈90%", kind: "major" } },
         { plus: true },
-        { node: { img: "borneol.png", name: "Borneol", sub: "endo-OH · minor ~10%", kind: "minor" } }
+        { node: { img: "borneol.png", name: "Borneol", sub: "endo-OH · minor ≈10%", kind: "minor" } }
       ],
       pathwayCaption: "Hydride adds irreversibly to the open <em>endo</em> face, placing –OH <em>exo</em> (isoborneol, major). The borate ester is hydrolyzed in the aqueous work-up.",
       calculator: {
         intro: "Pre-filled with the lab manual's micro-scale amounts — change any input and everything updates. Molar masses: camphor 152.23, product 154.25, $\\ce{NaBH4}$ 37.83 g/mol; methanol at 5 mL/g.",
         inputs: [
           { id: "in-camphor", label: "Camphor starting mass (g)", value: "0.100", step: "0.01" },
-          { id: "in-equiv", label: "NaBH₄ (molar equivalents)", value: "4.0", step: "0.1", note: "1 equiv delivers 4 hydrides; manual ≈ 4 equiv" },
+          { id: "in-equiv", label: "$\\ce{NaBH4}$ (molar equivalents)", value: "4.0", step: "0.1", note: "1 equiv delivers 4 hydrides; manual ≈ 4 equiv" },
           { id: "in-isolated", label: "Isolated product mass (g)", value: "0.080", step: "0.01", optional: true }
         ],
         outputs: [
           { id: "o-mmol", label: "Camphor", unit: "mmol" },
-          { id: "o-nabh4", label: "NaBH₄ needed", unit: "g" },
+          { id: "o-nabh4", label: "$\\ce{NaBH4}$ needed", unit: "g" },
           { id: "o-meoh", label: "Methanol", unit: "mL" },
           { id: "o-theory", label: "Theoretical product", unit: "g" },
-          { id: "o-iso", label: "Expected isoborneol (~90%)", unit: "g", kind: "major" },
-          { id: "o-bor", label: "Expected borneol (~10%)", unit: "g", kind: "minor" },
+          { id: "o-iso", label: "Expected isoborneol (≈90%)", unit: "g", kind: "major" },
+          { id: "o-bor", label: "Expected borneol (≈10%)", unit: "g", kind: "minor" },
           { id: "o-yield", label: "Percent yield", unit: "%", kind: "yield" }
         ],
         compute: function (v) {

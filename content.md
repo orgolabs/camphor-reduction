@@ -23,17 +23,17 @@ $\ce{NaBH4}$ reduction is **fast and essentially irreversible**, so the product 
 </article>
 <article class="mech-step major-accent"><span class="step-num">2</span>
 <h3>Hydride attacks endo → major</h3>
-<p>The small hydride (H⁻ from $\ce{BH4^-}$) takes the open <strong>endo</strong> face. Adding H to the endo side pushes the new –OH to the <strong>exo</strong> position, giving <strong>isoborneol</strong> as the major product.</p>
+<p>The small hydride ($\ce{H-}$ from $\ce{BH4^-}$) takes the open <strong>endo</strong> face. Adding H to the endo side pushes the new –OH to the <strong>exo</strong> position, giving <strong>isoborneol</strong> as the major product.</p>
 </article>
 <article class="mech-step minor-accent"><span class="step-num">3</span>
 <h3>Exo attack → minor</h3>
-<p>A smaller fraction of hydride pushes past the bridge from the <strong>exo</strong> face. That sends the –OH <strong>endo</strong>, giving <strong>borneol</strong>. Hence the ~90 : 10 preference for isoborneol.</p>
+<p>A smaller fraction of hydride pushes past the bridge from the <strong>exo</strong> face. That sends the –OH <strong>endo</strong>, giving <strong>borneol</strong>. Hence the ≈90 : 10 preference for isoborneol.</p>
 </article>
 </div>
 
 <div class="callout info">
 <h3>How the hydride is delivered (and why water is added at the end)</h3>
-<p>Borohydride ($\ce{BH4^-}$) is a <strong>hydride shuttle</strong>: one $\ce{NaBH4}$ can reduce up to <strong>four</strong> camphor molecules, handing over one H⁻ at a time. Each transfer builds up a <strong>borate ester</strong>. The free alcohol is only released during the <strong>aqueous work-up</strong> — which is why the procedure adds ice-cold water at the end: it hydrolyzes the borate ester and destroys any leftover $\ce{NaBH4}$.</p>
+<p>Borohydride ($\ce{BH4^-}$) is a <strong>hydride shuttle</strong>: one $\ce{NaBH4}$ can reduce up to <strong>four</strong> camphor molecules, handing over one $\ce{H-}$ at a time. Each transfer builds up a <strong>borate ester</strong>. The free alcohol is only released during the <strong>aqueous work-up</strong> — which is why the procedure adds ice-cold water at the end: it hydrolyzes the borate ester and destroys any leftover $\ce{NaBH4}$.</p>
 </div>
 
 <div class="callout">
@@ -48,10 +48,10 @@ $\ce{NaBH4}$ reduction is **fast and essentially irreversible**, so the product 
 | Formula | $\ce{C10H16O}$ | $\ce{C10H18O}$ | $\ce{C10H18O}$ |
 | Molar mass (g/mol) | 152.23 | 154.25 | 154.25 |
 | –OH orientation | — (ketone) | exo | endo |
-| Role in reduction | reactant | major (~90%) | minor (~10%) |
+| Role in reduction | reactant | major (≈90%) | minor (≈10%) |
 | PubChem CID | [159055](https://pubchem.ncbi.nlm.nih.gov/compound/159055) | [6321405](https://pubchem.ncbi.nlm.nih.gov/compound/6321405) | [6552009](https://pubchem.ncbi.nlm.nih.gov/compound/6552009) |
 
-The ~90 : 10 ratio is the commonly reported figure for $\ce{NaBH4}$ in methanol; exact values (≈85–92% isoborneol) vary with solvent and conditions. Primary data: Brown &amp; Muzzio, *JACS* 1966 (ref. 1).
+The ≈90 : 10 ratio is the commonly reported figure for $\ce{NaBH4}$ in methanol; exact values (≈85–92% isoborneol) vary with solvent and conditions. Primary data: Brown &amp; Muzzio, *JACS* 1966 (ref. 1).
 
 ## 3 · Procedure
 
@@ -63,7 +63,7 @@ This is the micro-scale "Week 3" procedure from the course lab manual. Always fo
 |---|---|---|
 | Camphor | 0.100 g (0.66 mmol) | substrate (the ketone) |
 | Methanol | 0.5 mL | protic solvent |
-| Sodium borohydride, $\ce{NaBH4}$ | ~0.10 g (2.6 mmol, ≈4 equiv) | hydride source (large excess) |
+| Sodium borohydride, $\ce{NaBH4}$ | ≈0.10 g (2.6 mmol, ≈4 equiv) | hydride source (large excess) |
 | Ice-cold water | 3.5 mL | quench &amp; hydrolyze borate ester |
 | Diethyl ether | 4.5 mL | extraction solvent |
 | Anhydrous $\ce{MgSO4}$ | spatula tip | drying agent |
@@ -74,7 +74,7 @@ This is the micro-scale "Week 3" procedure from the course lab manual. Always fo
 4. Have an **ice bath** ready.
 5. Weigh about **0.10 g sodium borohydride** into a vial.
 6. Cautiously and intermittently add the $\ce{NaBH4}$ in small portions. It will **evolve gas ($\ce{H2}$) and warm up**; when it rises above room temperature, return the flask to the ice bath.
-7. Heat the flask on a **warm sand bath for ~10 minutes**.
+7. Heat the flask on a **warm sand bath for ≈10 minutes**.
 8. Allow the reaction to cool to room temperature.
 9. Carefully add **3.5 mL ice-cold water**.
 10. Collect the white solid by vacuum filtration on a **Hirsch funnel**.
@@ -83,7 +83,7 @@ This is the micro-scale "Week 3" procedure from the course lab manual. Always fo
 13. Remove the drying agent by transferring the solution into another **pre-weighed** vial.
 14. Evaporate the ether to leave the product.
 
-**Characterize:** record the mass and percent yield (calculator below), measure the melting point, and take an IR spectrum — look for loss of the $\ce{C=O}$ band (~1740 cm⁻¹) and a new broad O–H band (~3300 cm⁻¹).
+**Characterize:** record the mass and percent yield (calculator below), measure the melting point, and take an IR spectrum — look for loss of the $\ce{C=O}$ band (≈1740 cm⁻¹) and a new broad O–H band (≈3300 cm⁻¹).
 
 <div class="safety"><strong>Safety:</strong> $\ce{NaBH4}$ releases flammable $\ce{H2}$ and is corrosive; methanol and diethyl ether are flammable, and ether is extremely so — no flames or ignition sources. Work in a fume hood with goggles and gloves. <strong>Waste:</strong> aqueous solutions to the designated aqueous-waste container; residual methanol/ether to non-halogenated organic waste.</div>
 
