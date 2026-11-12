@@ -1,0 +1,31 @@
+name: validate
+# Runs the orgolabs lab validator (window.LAB + content.md contract) on every push/PR.
+# Self-contained: checks out this lab plus the public playbook (validator) and shared (mol2d).
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out lab
+        uses: actions/checkout@v4
+      - name: Check out playbook (validator)
+        uses: actions/checkout@v4
+        with:
+          repository: orgolabs/lab-playbook
+          path: .ci/playbook
+      - name: Check out shared (mol2d images)
+        uses: actions/checkout@v4
+        with:
+          repository: orgolabs/shared
+          path: .ci/shared
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install validator deps
+        run: npm ci
+        working-directory: .ci/playbook
+      - name: Validate this lab
+        run: node .ci/playbook/scripts/check-lab.js --shared .ci/shared .
